@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UrbanNest Realty | Elevating Urban Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f9f9f9",
+                        "charcoal": "#333333",
+                        "surface-tint": "#515f78",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "outline": "#75777e",
+                        "tertiary-fixed-dim": "#d5c3b5",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed": "#231a11",
+                        "on-secondary-fixed-variant": "#574500",
+                        "secondary": "#735c00",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#44474d",
+                        "primary-container": "#0d1c32",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "on-secondary-fixed": "#241a00",
+                        "secondary-fixed": "#ffe088",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-fixed-variant": "#39475f",
+                        "glass-stroke": "rgba(255, 255, 255, 0.2)",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#0d1c32",
+                        "primary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#908174",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#e9c349",
+                        "tertiary-container": "#231a11",
+                        "inverse-primary": "#b9c7e4",
+                        "outline-variant": "#c5c6cd",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed": "#f2dfd0",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-container": "#76849f",
+                        "surface-container-low": "#f3f3f3",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#51453a",
+                        "onyx": "#131313",
+                        "on-surface": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .luxury-card:hover .property-image {
+            transform: scale(1.05);
+        }
+        .luxury-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .luxury-card:hover {
+            box-shadow: 0 20px 40px rgba(10, 25, 47, 0.08);
+        }
+        .btn-primary {
+            background-color: #0d1c32;
+            color: #ffe088;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            border: 1px solid #735c00;
+            color: #735c00;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(115, 92, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-glass-stroke shadow-sm h-20 px-margin-mobile md:px-margin-desktop flex justify-between items-center">
+<div class="max-w-container-max mx-auto w-full flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-charcoal tracking-tight">UrbanNest Realty</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md" href="#">Home</a>
+<a class="text-charcoal hover:text-secondary transition-colors duration-300 font-label-md" href="#">About</a>
+<a class="text-charcoal hover:text-secondary transition-colors duration-300 font-label-md" href="#">Properties</a>
+<a class="text-charcoal hover:text-secondary transition-colors duration-300 font-label-md" href="#">Contact</a>
+<button class="ml-4 px-6 py-2 btn-primary font-label-md uppercase tracking-wider">Inquire Now</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105 animate-pulse-slow" data-alt="A cinematic, wide-angle shot of a luxurious ultra-modern penthouse interior at dusk. Floor-to-ceiling glass windows reveal a sprawling urban skyline illuminated by city lights. The interior features minimalist furniture, warm ambient lighting, and rich textures of marble and dark wood. The atmosphere is sophisticated and serene, capturing the pinnacle of high-end urban living with a professional, architectural photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZNsuAMtgQDFR3zTKKB9Gg6QPmSjoUXfkAk_3SjWOwaPNkFptByW1oDBGTkQUeGiz36o_dX0zE21k6KflTshv8UrCo4LNx76eGeZH8OEDw76tkrrrKy5217-VQ0k5DrW2Drbl9H261oNzAORaJGtMm4Gt7vEeogcuRs24x1YPPwJXZI0VWjfHtEQtnm_mOe0gMmtbTjEMy_8Bi9xT5Jipg0rpDyP2LuHwHynI5lCb2aHv1X7Unn37xFQ')"></div>
+<div class="absolute inset-0 bg-primary-container/30"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="glass-effect p-12 md:p-20 inline-block rounded-lg max-w-3xl">
+<h1 class="font-display-lg text-display-lg mb-6 text-primary">Find Your Dream Home Today</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Buy, Sell &amp; Rent Premium Residential and Commercial Properties with Trusted Real Estate Experts.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="btn-primary px-10 py-4 font-label-md text-lg">EXPLORE PROPERTIES</button>
+<button class="btn-secondary px-10 py-4 font-label-md text-lg glass-effect">CONTACT NOW</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Animated Statistics -->
+<section class="py-20 bg-surface-container-low border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="p-6">
+<span class="block font-display-lg text-5xl text-secondary mb-2" id="stat-properties">500+</span>
+<span class="font-label-md uppercase tracking-widest text-charcoal">Properties</span>
+</div>
+<div class="p-6">
+<span class="block font-display-lg text-5xl text-secondary mb-2" id="stat-clients">1200+</span>
+<span class="font-label-md uppercase tracking-widest text-charcoal">Happy Clients</span>
+</div>
+<div class="p-6">
+<span class="block font-display-lg text-5xl text-secondary mb-2" id="stat-years">10+</span>
+<span class="font-label-md uppercase tracking-widest text-charcoal">Years Experience</span>
+</div>
+<div class="p-6">
+<span class="block font-display-lg text-5xl text-secondary mb-2">100%</span>
+<span class="font-label-md uppercase tracking-widest text-charcoal">Trusted Service</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-4">Our Bespoke Services</h2>
+<div class="h-1 w-20 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Buy -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">home_work</span>
+<h3 class="font-headline-md text-2xl mb-3">Buy</h3>
+<p class="text-on-surface-variant font-body-md">Personalized acquisition strategies for the most sought-after urban addresses.</p>
+</div>
+<!-- Sell -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">sell</span>
+<h3 class="font-headline-md text-2xl mb-3">Sell</h3>
+<p class="text-on-surface-variant font-body-md">Global marketing reach and expert valuation to secure your property's true value.</p>
+</div>
+<!-- Rental -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">key</span>
+<h3 class="font-headline-md text-2xl mb-3">Rental</h3>
+<p class="text-on-surface-variant font-body-md">Luxury lease management for discerning tenants and prestigious property owners.</p>
+</div>
+<!-- Commercial -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">apartment</span>
+<h3 class="font-headline-md text-2xl mb-3">Commercial</h3>
+<p class="text-on-surface-variant font-body-md">Strategic commercial spaces designed for corporate excellence and growth.</p>
+</div>
+<!-- Residential -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">domain</span>
+<h3 class="font-headline-md text-2xl mb-3">Residential</h3>
+<p class="text-on-surface-variant font-body-md">Exclusive family homes and modern apartments in prime metropolitan hubs.</p>
+</div>
+<!-- Investment -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">trending_up</span>
+<h3 class="font-headline-md text-2xl mb-3">Investment</h3>
+<p class="text-on-surface-variant font-body-md">High-yield real estate opportunities curated by our investment analysts.</p>
+</div>
+<!-- Home Loan -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">payments</span>
+<h3 class="font-headline-md text-2xl mb-3">Home Loan</h3>
+<p class="text-on-surface-variant font-body-md">Seamless financial solutions with competitive rates from trusted banks.</p>
+</div>
+<!-- Documentation -->
+<div class="luxury-card p-8 border border-outline-variant rounded hover:border-secondary group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block group-hover:scale-110 transition-transform">description</span>
+<h3 class="font-headline-md text-2xl mb-3">Documentation</h3>
+<p class="text-on-surface-variant font-body-md">Meticulous legal support and paperwork management for peace of mind.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Properties -->
+<section class="py-32 bg-background overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-4">Featured Listings</h2>
+<p class="text-on-surface-variant font-body-lg">Hand-picked residences that define urban luxury.</p>
+</div>
+<button class="btn-secondary px-8 py-3 font-label-md">VIEW ALL LISTINGS</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Property 1 -->
+<div class="luxury-card bg-white group cursor-pointer">
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center property-image transition-transform duration-700" data-alt="An exterior shot of a stunning luxury villa at golden hour. The architecture is ultra-modern with sharp lines, large glass walls, and a pristine white facade. A turquoise infinity pool reflects the glowing sunset sky. The surrounding landscaping is perfectly manicured with palm trees and soft outdoor lighting, evoking an atmosphere of exclusive Mediterranean luxury and tranquility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_wlFJywiHHVsQ4dkrCRQRaLt1GWgD8i8dilBHiqyuu46i0ah592zTN6iq2Ul0H9G3hzsyV_t-NIDSTYhueExu-12E4EdBUdWThDvlN4YLg_j1aP0hkXZK6Ij3E7h1XGqpyxXRhpZyfMJG3hYGgPcYvZ4o5oOgC-RR4pFLRQHGCG3Ht94PD7MJlD5fYGNrTXj4hEU9O6RdP78aUoiHz9LLbrMGTZNdpo-eYtTU3z26uXAnx5UjFHb7yQ')"></div>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 font-label-sm uppercase">Villa</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-xl">The Azure Heights</h3>
+<span class="font-headline-md text-secondary">$2,450,000</span>
+</div>
+<div class="flex items-center text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span>
+<span class="font-label-sm uppercase">Beverly Hills, CA</span>
+</div>
+<div class="grid grid-cols-3 border-t border-outline-variant pt-6">
+<div class="text-center">
+<span class="material-symbols-outlined block text-secondary mb-1">bed</span>
+<span class="font-label-sm">5 Beds</span>
+</div>
+<div class="text-center border-x border-outline-variant">
+<span class="material-symbols-outlined block text-secondary mb-1">bathtub</span>
+<span class="font-label-sm">6 Baths</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined block text-secondary mb-1">square_foot</span>
+<span class="font-label-sm">5,200 sqft</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property 2 -->
+<div class="luxury-card bg-white group cursor-pointer">
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center property-image transition-transform duration-700" data-alt="A sophisticated modern apartment building exterior in a prime city center location. The facade features a mix of glass, dark steel, and lush vertical gardens on the balconies. The lighting is crisp, midday sun casting soft shadows. The image captures the essence of high-end urban lifestyle and contemporary architectural design with a clean, high-contrast aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbak_tM2uO3jzb3ioAKnVBcjWxRlPWEnIczl79OAGXQnosmTulB4-MMoFx3eH_7V1-XIc_B9eeCAUALvS6xU37HgwgF1W_D4rLiUJbkTFNSHdRm5xDgNnzDSeSQ12fxsF1t9gRhfZLqNFXvtlwCeh493eRx4Y7387nH5XxYsKYepkfgnjhX4Ea95vsG6SQwbjvlPn975nnzHmZKHqrYuJsgR50RPGvHmio2q5fOOlrPk6LUgJpnXiaSA')"></div>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 font-label-sm uppercase">Apartment</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-xl">Horizon Loft</h3>
+<span class="font-headline-md text-secondary">$1,120,000</span>
+</div>
+<div class="flex items-center text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span>
+<span class="font-label-sm uppercase">Manhattan, NY</span>
+</div>
+<div class="grid grid-cols-3 border-t border-outline-variant pt-6">
+<div class="text-center">
+<span class="material-symbols-outlined block text-secondary mb-1">bed</span>
+<span class="font-label-sm">3 Beds</span>
+</div>
+<div class="text-center border-x border-outline-variant">
+<span class="material-symbols-outlined block text-secondary mb-1">bathtub</span>
+<span class="font-label-sm">2 Baths</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined block text-secondary mb-1">square_foot</span>
+<span class="font-label-sm">2,100 sqft</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property 3 -->
+<div class="luxury-card bg-white group cursor-pointer">
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center property-image transition-transform duration-700" data-alt="A sleek, professional office space interior with a panoramic view of a modern financial district. The office features glass partitions, high-end ergonomic furniture, and a minimalist design palette of greys and whites with gold accents. Natural light floods the space from large windows. The overall mood is one of corporate power, luxury, and technological advancement in a high-key setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgdWe5PSodL-P2pTVQWIDSWqenTkuNc8WinHiYQ42H9J1VOMUwlTcdpBpTAwzXRbUzuY_uoEVDAQq-duePwxMG8MtEeKOvOZ94D-pqtzLU9-AWVnLan8ct5-bFS3s8GRgpw0sccegTOS521v1pN08Uue0Ijcjb2ZVqdZDBd_OgtEq61GbZSqJwrKDZJotho6rRjaQzWDRy6zIyLMxLujZgseUzfzqGVgQucUrRmoSGtLWUifFC-mdNfw')"></div>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 font-label-sm uppercase">Office</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-xl">Centrum Business Suite</h3>
+<span class="font-headline-md text-secondary">$3,800,000</span>
+</div>
+<div class="flex items-center text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span>
+<span class="font-label-sm uppercase">London, UK</span>
+</div>
+<div class="grid grid-cols-3 border-t border-outline-variant pt-6">
+<div class="text-center">
+<span class="material-symbols-outlined block text-secondary mb-1">groups</span>
+<span class="font-label-sm">50 Staff</span>
+</div>
+<div class="text-center border-x border-outline-variant">
+<span class="material-symbols-outlined block text-secondary mb-1">meeting_room</span>
+<span class="font-label-sm">8 Rooms</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined block text-secondary mb-1">square_foot</span>
+<span class="font-label-sm">12,500 sqft</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Property Categories Grid -->
+<section class="py-32 bg-onyx text-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-16 text-center">Browse by Category</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="An artistic close-up of a luxury villa's architectural details, focusing on white marble textures and gold linear accents. High-contrast lighting creates dramatic shadows. Minimalist and elegant style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIc2PNxsCr1Zn6d4babF7geajZpqKk3szMwq1Jc1-ApHxCsTD20PvDqRqjNw0xldUmDi4iAF6qEQit7AEh0vKB28Owc0huXLZcdL-vMX5pKByatPqfOkNE0LPBCsXwr8fGT3LeF8U4YLobWH1iaeL7lmfv_WvKqFjTblUGBBbmavE4K2sWwUJHH5vmpu1jJpdRvh1axERukm9fmFKIwFjrqgRd2eJSHcH5516QxPvH9gF7HsXiqTbB3w')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">villa</span>
+<span class="font-label-md uppercase tracking-widest">Villas</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="A modern apartment complex with geometric glass balconies reflecting a blue sky. Architectural precision and clean lines, high-end real estate aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0-bPwbrLb-VwN0DVLdsIux2ztd-rU9QSAklWDQJFSImGFuqy-JKEj37NT1JrbPHuTzT2P2FgFfaPcBesQH3j9fCa3yUoA6LN1lYhPfriS2OZ_opUZ7PW9qnk7cvy-vxCtzNYKorITadsEd3qRqkYFXBUTv5KUYNy3Q2J-nWm7ly4VE_ha2_-BREzXGvG4Aa4rtdzR08r9MhTPnfz2gbREJeDwrXnqmJXJrPiVJevikuJ_nZieXpiO4g')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">apartment</span>
+<span class="font-label-md uppercase tracking-widest">Apartments</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="Interior of a luxury flat with minimalist decor, warm wooden floors and large windows. The lighting is soft and inviting, suggesting a premium lifestyle." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbiOmiVKlHS9cn7ySzhrt-p4TDSD6N74Smc0Pv3wZVqpEo_ticTthxYKdtykJ6QXGNvNYoRQVgEZvKoFMTp5YPYIa3wclKZYgjSCgjng1zfTRP1h39-NBXwXGItlMEOzxHPZtKqTMu4Jc3Rexp5f3lzInTOC9MkB3BSI3k5FUlKn-Qj662mYHmH_osgFn8jRvk4T3ZuklIpoHXsWXSKo7ABWbL-xwYO66_zn6QvdWL7HhvNZViF9QDtw')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">holiday_village</span>
+<span class="font-label-md uppercase tracking-widest">Flats</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="A corporate office lobby with marble floors and a sleek reception desk. Polished surfaces and modern corporate lighting, high-end business district vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwWS0qEcPI65Ccv9xgbxrGPLVIRBFI2TNbvDwr19u7xNiuXx5jfC7aSck_jptxoEJft-7BTdzMWi-MBdRqQycDJyTOeGzewpnESsJO-XDSHKNwki_ICwwEU8iqxzHD9N4OveUK9qh6815V8Vcw9riyBSjtJn8Q7Z3Y7l-wYCATa2URVNFu2u3Eev2URUNjEhkANE7rcdYVD0TAQmWyY1T2TjRmbRR2jvviFqIJjg9ZxLM4JoASb9Ewuw')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">business_center</span>
+<span class="font-label-md uppercase tracking-widest">Office Space</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="Exterior of high-end boutique shops in a luxury shopping district. Elegant window displays and warm street lighting at night." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI1ExGqQP23xt4VXhi3gUpoNn_CWNhbyaqI8G4TNiN9NOqZ9MwWoP9-y0WThZz24JojXAn5TjrxuUSw1B-g-Z6eDXzWpNNb8GRpNFUbClrD2fuqbpvz7lePX5ocRPbDRd4smKT5vhd4XB95Eaz95Wy29c8_gfr1ozOhlIcvXOW5_neafOgty_xVI5fcaPhDTVBlvF-SStX4oEQ4SBjvPVuALSc_oWMhc-Px2ZhyZTjn-45RsdzftjdmQ')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">storefront</span>
+<span class="font-label-md uppercase tracking-widest">Shops</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="A vast, empty green field at sunset, representing prime development land. Golden hour lighting and soft clouds in the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDrCC1xnoh03KZG-VGrkRXqT2b2R1HhBQtGqiLzI2YjyEuyuF5xgt6G5TJLBiDOPuIZWdOGhTVDdYfME3PUhcKBaCz0EBp5VgRRjy-WNjp9xm17TJxRKL91ii9AJjmqk0VZrqHIFrGHK6N4gkztWVxbNEBAsZKb83-vVbFGu3V90rB8N_vPobkuKonLY9m3zDmAm02LZTDL98h_fiSagD_OwGOz3yX4s_h68-AshD4hzK_NXtkPThKoQ')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">landscape</span>
+<span class="font-label-md uppercase tracking-widest">Land</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="A rustic yet luxury farm house nestled in a green valley. Traditional stonework with modern amenities and large patios." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR8a5Ew4blPPcB5ni1XK2WG70RyawyWDNgdudNKZzNn6S9zYzQeiW6CSISr9Igg-aF8uiwCtuR5RLpwG4vxW_Mwfk_2Ivvx60mdDADLBQh2WHpwnp7d0p4f-iEfygzTCEg1BpDRg-rU6v-rV1KX_6uCMAeZgn_qwiSotOCBNjWYFPfcAubkC_ioi9bu1j3t5VnPY-SelPxq1R6p6bg7sZN1yVIJC08qodD9haLM3aXXdlCclfDgqTikw')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">agriculture</span>
+<span class="font-label-md uppercase tracking-widest">Farm House</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden cursor-pointer">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-1000 opacity-60" data-alt="A high-end multi-story residential building with private terraces. Contemporary design using premium materials like wood and glass." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuV0hUhsEz0whcaDZfuhqZa8q3N4czv6KF7-xXTlhscFLRIpJONrph2KrE0_avvOYhvc2laD6qbJcbHurtDPJp9MZhlBD98Velk-gFg5BcST1WTtZBeCAAPi4U93ZEkCVfeBUlTO4MxMdKc-3asG5LUppKfIsxIIQSYZ_cx20ecwDvk963DYKG-cO9OomydnuWiOW7Ragwd90brPZ-Q_WO5J5DM96jZQefTcY1IoGXe6T3E1GCdWKJkA')"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-secondary-fixed">foundation</span>
+<span class="font-label-md uppercase tracking-widest">Builder Floors</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Reviews Section -->
+<section class="py-32 bg-white relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-20 text-center">Voices of Satisfaction</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Review 1 -->
+<div class="glass-effect p-10 border border-outline-variant relative luxury-card">
+<div class="flex text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-8">"UrbanNest Realty made our property acquisition seamless. Their attention to detail and market knowledge is unparalleled in the luxury segment."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-surface-container-high rounded-full mr-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<div>
+<span class="block font-label-md">James Carrington</span>
+<span class="block font-label-sm text-on-surface-variant uppercase">Investment Banker</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="glass-effect p-10 border border-outline-variant relative luxury-card">
+<div class="flex text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Finding a home that truly represents your lifestyle can be difficult, but their curated selection was exactly what we needed. Highly recommended."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-surface-container-high rounded-full mr-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<div>
+<span class="block font-label-md">Sophia Mendis</span>
+<span class="block font-label-sm text-on-surface-variant uppercase">Creative Director</span>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="glass-effect p-10 border border-outline-variant relative luxury-card">
+<div class="flex text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Their commercial portfolio is diverse and strategically located. They understood our corporate needs and delivered a workspace that reflects our brand."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-surface-container-high rounded-full mr-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<div>
+<span class="block font-label-md">Robert Vane</span>
+<span class="block font-label-sm text-on-surface-variant uppercase">CEO, Nexus Tech</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-onyx text-surface-variant pt-24 pb-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter mb-20">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-lg text-headline-lg text-surface-bright block mb-6">UrbanNest</span>
+<p class="font-body-md text-surface-variant mb-6">Redefining the urban landscape through exclusive real estate solutions and white-glove service.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-surface-bright cursor-pointer hover:text-secondary-fixed transition-colors">face_nod</span>
+<span class="material-symbols-outlined text-surface-bright cursor-pointer hover:text-secondary-fixed transition-colors">public</span>
+<span class="material-symbols-outlined text-surface-bright cursor-pointer hover:text-secondary-fixed transition-colors">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-surface-bright uppercase tracking-widest mb-8">Properties</h4>
+<ul class="space-y-4 font-body-md">
+<li><a class="hover:text-secondary-container transition-all" href="#">Villas</a></li>
+<li><a class="hover:text-secondary-container transition-all" href="#">Apartments</a></li>
+<li><a class="hover:text-secondary-container transition-all" href="#">Commercial</a></li>
+<li><a class="hover:text-secondary-container transition-all" href="#">Land</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-surface-bright uppercase tracking-widest mb-8">Company</h4>
+<ul class="space-y-4 font-body-md">
+<li><a class="hover:text-secondary-container transition-all" href="#">About Us</a></li>
+<li><a class="hover:text-secondary-container transition-all" href="#">Our Agents</a></li>
+<li><a class="hover:text-secondary-container transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-secondary-container transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-surface-bright uppercase tracking-widest mb-8">Contact</h4>
+<ul class="space-y-4 font-body-md">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed mr-3">location_on</span>
+<span>123 Skyline Plaza, Metropolitan City</span>
+</li>
+<li class="flex items-center">
+<span class="material-symbols-outlined text-secondary-fixed mr-3">call</span>
+<span>+1 (555) UrbanNest</span>
+</li>
+<li class="flex items-center">
+<span class="material-symbols-outlined text-secondary-fixed mr-3">whatshot</span>
+<span>9354114810</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8 border-t border-glass-stroke text-center">
+<p class="font-body-md text-surface-variant">© 2024 UrbanNest Realty. Elevating Urban Living.</p>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-50 bg-secondary-container text-on-secondary-container rounded-full h-16 w-16 flex items-center justify-center shadow-[0_20px_40px_rgba(116,92,0,0.3)] hover:scale-110 transition-transform duration-300 animate-bounce group" href="https://wa.me/9354114810" target="_blank">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="absolute right-full mr-4 bg-white px-4 py-2 rounded shadow-lg text-charcoal font-label-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Chat on WhatsApp</span>
+</a>
+<script>
+        // Simple scroll reveal for stats
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations or listeners if needed
+        document.querySelectorAll('.luxury-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential hover sound or micro-interaction
+            });
+        });
+    </script>
+</body></html>
